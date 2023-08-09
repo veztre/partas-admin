@@ -72,24 +72,24 @@ defineProps({
 <div class="p-6 dark:border-gray-700 mt-14 bg-blue-400">
     <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
         <div>
-            <img class="h-auto max-w-full rounded-lg" src="storage/images/carousel1.jpg" alt="">
+            <img class="h-auto max-w-full rounded-lg" src="https://nr4kmtcwpy93.objectstorage.ap-tokyo-1.oci.customer-oci.com/n/nr4kmtcwpy93/b/bucket-20230809-1910/o/carousel1.jpg" alt="">
         </div>
         <div>
-            <img class="h-auto max-w-full rounded-lg" src="storage/images/carousel2.jpg" alt="">
+            <img class="h-auto max-w-full rounded-lg" src="https://nr4kmtcwpy93.objectstorage.ap-tokyo-1.oci.customer-oci.com/n/nr4kmtcwpy93/b/bucket-20230809-1910/o/carousel1.png" alt="">
         </div>
         <div>
-            <img class="h-auto max-w-full rounded-lg" src="storage/images/carousel3.jpg" alt="">
+            <img class="h-auto max-w-full rounded-lg" src="https://nr4kmtcwpy93.objectstorage.ap-tokyo-1.oci.customer-oci.com/n/nr4kmtcwpy93/b/bucket-20230809-1910/o/carousel2.jpg" alt="">
         </div>
         <div>
-            <img class="h-auto max-w-full rounded-lg" src="storage/images/carousel1.png" alt="">
+            <img class="h-auto max-w-full rounded-lg" src="https://nr4kmtcwpy93.objectstorage.ap-tokyo-1.oci.customer-oci.com/n/nr4kmtcwpy93/b/bucket-20230809-1910/o/carousel3.jpg" alt="">
         </div>
         <div>
             <Carousel />
         </div>
         <div>
-            <img class="h-auto max-w-full rounded-lg" src="storage/images/carousel1.png" alt="">
+            <img class="h-auto max-w-full rounded-lg" src="https://nr4kmtcwpy93.objectstorage.ap-tokyo-1.oci.customer-oci.com/n/nr4kmtcwpy93/b/bucket-20230809-1910/o/carousel1.png" alt="">
         </div>
-        
+
     </div>
 </div>
 
