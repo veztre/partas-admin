@@ -3,6 +3,7 @@
 use App\Http\Controllers\BusrouteController;
 use App\Http\Controllers\BusController;
 use App\Http\Controllers\BusScheduleController;
+use App\Http\Controllers\LocationController;
 use App\Http\Controllers\PaymentsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReservationsController;
@@ -72,6 +73,16 @@ Route::middleware('auth')->group(function () {
      Route::get('show_all_reservations', [ReservationsController::class, 'show_all'])->name('reservations.show_all');
     //Route::post('reservation/{schedule}', [ReservationsController::class, 'update'])->name('schedule.update');
     //  Route::delete('destroy_schedule/{busSchedule}', [BusScheduleController::class, 'destroy'])->name('schedule.destroy');
+
+
+    //locations
+    Route::get('locations', [LocationController::class, 'index'])->name('locations');
+    Route::get('create_location', [LocationController::class, 'create'])->name('location.create');
+    Route::get('show_location', [LocationController::class, 'show'])->name('location.show');
+    Route::post('store_location', [LocationController::class, 'store'])->name('location.store');
+    Route::get('edit_location', [LocationController::class, 'edit'])->name('location.edit');
+    Route::put('location/{location}', [LocationController::class, 'update'])->name('location.update');
+    Route::delete('destroy_location/{location}', [LocationController::class, 'destroy'])->name('location.destroy');
 
     // Payment
     Route::get('payments', [PaymentsController::class, 'index'])->name('payments');

@@ -9,7 +9,7 @@ defineProps({
 })
 
 function destroy(id){
-    if (confirm('Are you sure you want to delete this Route?')) {
+    if (confirm('Are you sure you want to delete this Bus Information?')) {
         router.delete(route("bus.destroy",id));
     }
 }
@@ -20,7 +20,7 @@ function destroy(id){
     <Head title="Dashboard" />
 
     <AuthenticatedLayout>
-        
+
 
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">

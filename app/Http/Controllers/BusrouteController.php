@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Busroute;
 use App\Http\Requests\UpdateBusrouteRequest;
+use App\Models\Location;
 use Illuminate\Support\Facades\Request;
 use Inertia\Inertia;
 
@@ -26,7 +27,8 @@ class BusrouteController extends Controller
      */
     public function create()
     {
-        return Inertia::render('Busroutes/Create');
+        $locations=Location::all();
+        return Inertia::render('Busroutes/Create',['locations'=>$locations]);
     }
 
     /**
@@ -63,7 +65,8 @@ class BusrouteController extends Controller
     {
         $id=Request::get("id");
         $busroute= Busroute::find($id);
-        return Inertia::render('Busroutes/Edit',['busroute'=>$busroute]);
+        $locations= Location::all();
+        return Inertia::render('Busroutes/Edit',['busroute'=>$busroute,'locations'=>$locations]);
     }
 
     /**

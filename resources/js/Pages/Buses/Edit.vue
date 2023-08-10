@@ -40,7 +40,7 @@ const props = defineProps({
     <Head title="Update Bus Route" />
 
     <AuthenticatedLayout>
-       
+
 
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -54,14 +54,13 @@ const props = defineProps({
                                     v-model="form.code"
                                     required
                                 />
-                                <InputLabel for="type"  value="Type"/>
-                                <TextInput
-                                    id="type"
-                                    type="text"
-                                    v-model="form.type"
-
-                                    required
-                                />
+                                <InputLabel for="type" class="block font-medium text-gray-700">Select Bus Type:</InputLabel>
+                                <select id="type" v-model="form.type" class="mt-1 block w-full px-4 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:outline-none focus:border-indigo-500">
+                                    <option value="deluxe">De Luxe</option>
+                                    <option value="firstclass">First Class</option>
+                                    <option value="luxury">Luxury</option>
+                                    <option value="superdeluxe">Super De Luxe</option>
+                                 </select>
                                 <InputLabel for="capacity"  value="Capacity"/>
                                 <TextInput
                                     id="capacity"

@@ -3,34 +3,43 @@
 namespace App\Http\Controllers;
 
 use App\Models\Location;
-use App\Http\Requests\StoreLocationRequest;
-use App\Http\Requests\UpdateLocationRequest;
+use Illuminate\Support\Facades\Request;
+use Inertia\Inertia;
 
 class LocationController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function indexAPI()
     {
     $locations= Location::select('location','longtitude','latitude')->get();
     return response()->json($locations);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+    public function index()
+    {
+    $locations= Location::all();
+    return Inertia::render('Locations/List',['locations'=>$locations]);
+    }
+
+
+
+
     public function create()
     {
-        //
+        return Inertia::render('Locations/Create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreLocationRequest $request)
+    public function store()
     {
-        //
+        Location::create([
+            "location"=> Request::get("location"),
+        ]);
+        return to_route('locations')->with('success', 'New  created.');
     }
 
     /**
@@ -44,17 +53,27 @@ class LocationController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Location $location)
+    public function edit()
     {
-        //
+
+        $location= Location::find(Request::get("id"));
+        return Inertia::render('Locations/Edit',['location'=>$location]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateLocationRequest $request, Location $location)
+    public function update(Location $location)
     {
-        //
+        Request::validate([
+            "location"=> 'required',
+        ]);
+
+        Location::where('id',$location->id)
+        ->update([
+            "location"=> Request::get("location"),
+        ]);
+        return to_route('locations')->with('success', 'location  Updated.');
     }
 
     /**
@@ -62,6 +81,7 @@ class LocationController extends Controller
      */
     public function destroy(Location $location)
     {
-        //
+        Location::destroy($location->id);
+        return to_route('locations');
     }
 }
