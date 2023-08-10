@@ -35,7 +35,7 @@ Route::post('login', [UserController::class, 'login'])->name('login');
 Route::post('saveUser', [UserController::class, 'saveUser'])->name('saveUser');
 Route::post('reserve_schedule', [BusScheduleController::class, 'reserve'])->name('reserve_schedule');
 
-Route::post('reservations', [ReservationsController::class, 'reserve'])->name('reservations');
+Route::post('reservations', [ReservationsController::class, 'showAPI'])->name('reservations');
 
 
 
