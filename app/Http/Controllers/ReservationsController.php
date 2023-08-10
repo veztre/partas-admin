@@ -64,9 +64,10 @@ class ReservationsController extends Controller
     }
     public function showAPI()
     {
+
         $user=User::where('email',Request::get('email'))->first();
         $reservations = Reservation::groupBy(['user_id', 'origin', 'destination','arrival_time','departure_time','price'])
-        ->selectRaw('user_id,origin,destination,arrival_time,departure_time, count(seat_number)* price')
+        ->selectRaw('user_id,origin,destination,arrival_time,departure_time, price, count(seat_number)* price AS total_price')
         ->join('bus_schedules','reservations.bus_schedule_id', '=', 'bus_schedules.id')
         ->join('bus_routes','bus_routes.id','=','bus_schedules.route_id')
         ->where('user_id',$user->id)
