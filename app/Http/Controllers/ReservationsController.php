@@ -7,6 +7,7 @@ use App\Http\Requests\StoreReservationsRequest;
 use App\Http\Requests\UpdateReservationsRequest;
 use App\Models\BusSchedule;
 use App\Models\Payment;
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Request;
 use Inertia\Inertia;
@@ -52,12 +53,25 @@ class ReservationsController extends Controller
      */
     public function show()
     {
-        $reservations = Reservation::groupBy(['user_id','bus_schedule_id','price'])
-        ->selectRaw('email, bus_schedule_id, COUNT(*) as total_reservation,price')
+        $user=User::where('email',Request::get('email'))->first();
+        $reservations = Reservation::groupBy(['user_id', 'origin', 'destination','arrival_time','departure_time','price'])
+        ->selectRaw('user_id,origin,destination,arrival_time,departure_time, count(seat_number)* price')
         ->join('bus_schedules','reservations.bus_schedule_id', '=', 'bus_schedules.id')
-        ->where('user_id',auth()->user()->id)
+        ->join('bus_routes','bus_routes.id','=','bus_schedules.route_id')
+        ->where('user_id',$user->id)
         ->get();
          return Inertia::render('Reservations/Show',['reservations'=>$reservations]);
+    }
+    public function showAPI()
+    {
+        $user=User::where('email',Request::get('email'))->first();
+        $reservations = Reservation::groupBy(['user_id', 'origin', 'destination','arrival_time','departure_time','price'])
+        ->selectRaw('user_id,origin,destination,arrival_time,departure_time, count(seat_number)* price')
+        ->join('bus_schedules','reservations.bus_schedule_id', '=', 'bus_schedules.id')
+        ->join('bus_routes','bus_routes.id','=','bus_schedules.route_id')
+        ->where('user_id',$user->id)
+        ->get();
+         return response()->json($reservations);
     }
 
     /**
