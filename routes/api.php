@@ -23,7 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('locations', [LocationController::class, 'index'])->name('locations');
+Route::get('locations', [LocationController::class, 'indexAPI'])->name('locations');
 
 Route::get('schedules', [BusScheduleController::class, 'indexAPI'])->name('schedules');
 
