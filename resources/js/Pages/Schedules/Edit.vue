@@ -17,7 +17,8 @@ const props = defineProps({
             arrival_time: props.busSchedule.arrival_time,
             departure_time: props.busSchedule.departure_time,
             bus_id: props.busSchedule.bus_id,
-            route_id:props.busSchedule.route_id
+            route_id:props.busSchedule.route_id,
+            price:props.busSchedule.price
     })
 
     function update() {
@@ -26,7 +27,8 @@ const props = defineProps({
             arrival_time: form.arrival_time,
             departure_time: form.departure_time,
             bus_id:  form.bus_id,
-            route_id: form.route_id
+            route_id: form.route_id,
+            price: form.price
         })
   }
 
@@ -57,6 +59,12 @@ const props = defineProps({
                                 </div>
                                 <div class="block w-full">
                                     <TextInput  id="arrival_time"  type="datetime-local" v-model="form.arrival_time" required />
+                                </div>
+                                <div>
+                                    <InputLabel for="price"  value="Price"/>
+                                </div>
+                                <div class="block w-full">
+                                    <TextInput  id="price"  type="number" v-model="form.price" required />
                                 </div>
 
                                 <InputLabel for="route" class="block font-medium text-gray-700">Select Bus Route:</InputLabel>
