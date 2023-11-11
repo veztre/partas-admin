@@ -88,7 +88,7 @@ php artisan db:wipe
 
 ***Run migrations**
 ```sh
-php artisan db:migrate
+php artisan migrate
 ```
 
 **Seed database**
