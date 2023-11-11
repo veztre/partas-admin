@@ -29,8 +29,8 @@ class BusScheduleFactory extends Factory
             // 'start_time' => now(),
             // 'end_time' => now()->addHours(1),
             'price' => fake()->numberBetween(500, 1000),
-            'departure_time' => fake()->dateTimeBetween('+1 days', '+30 days'),
-            'arrival_time' => fake()->dateTimeBetween('+30 days', '+60 days'),
+            'departure_time' => fake()->dateTimeBetween('+1 days', '+30 days')->format('Y-m-d H:i'),
+            'arrival_time' => fake()->dateTimeBetween('+30 days', '+60 days')->format('Y-m-d H:i'),
         ];
     }
 }
