@@ -64,3 +64,67 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+
+
+
+**Set up**
+```sh
+npm i
+composer update
+```
+
+**Generate key**
+```sh
+php artisan key:generate
+```
+
+**Reset database**
+```sh
+php artisan db:wipe
+```
+
+***Run migrations**
+```sh
+php artisan db:migrate
+```
+
+**Seed database**
+```sh
+php artisan db:seed
+```
+
+**Run tests**
+```sh
+vendor\bin\phpunit
+```
+
+**Run project**
+```sh
+php artisan serve
+npm run dev
+```
+
+
+## Not necessary, just notes
+
+**Build for production**
+```sh
+npm run prod
+cp .env.example .env
+php artisan config:cache
+php artisan route:cache
+php artisan optimize
+```
+
+**Make model**
+```sh
+php artisan make:model Status
+php artisan make:migration create_status
+```
+
+**Make controller**
+```sh
+php artisan make:controller StatusController
+```
