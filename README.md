@@ -96,11 +96,6 @@ php artisan db:migrate
 php artisan db:seed
 ```
 
-**Run tests**
-```sh
-vendor\bin\phpunit
-```
-
 **Run project**
 ```sh
 php artisan serve
@@ -109,6 +104,11 @@ npm run dev
 
 
 ## Not necessary, just notes
+
+**Run tests**
+```sh
+vendor\bin\phpunit
+```
 
 **Build for production**
 ```sh
