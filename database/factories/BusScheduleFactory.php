@@ -16,7 +16,7 @@ class BusScheduleFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    protected $model = BusSchedule::class;
+    //protected $model = BusSchedule::class;
 
     public function definition()
     {
@@ -26,6 +26,9 @@ class BusScheduleFactory extends Factory
         return [
             'bus_id' => $bus->id,
             'route_id' => $route->id,
+            // 'start_time' => now(),
+            // 'end_time' => now()->addHours(1),
+            'price' => fake()->numberBetween(500, 1000),
             'departure_time' => fake()->dateTimeBetween('+1 days', '+30 days'),
             'arrival_time' => fake()->dateTimeBetween('+30 days', '+60 days'),
         ];

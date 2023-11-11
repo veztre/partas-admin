@@ -14,7 +14,7 @@ class BusFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    protected $model = Bus::class;
+    //protected $model = Bus::class;
 
     public function definition()
     {

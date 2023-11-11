@@ -15,7 +15,7 @@ class PassengerFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    protected $model = Passenger::class;
+    //protected $model = Passenger::class;
 
     public function definition()
     {

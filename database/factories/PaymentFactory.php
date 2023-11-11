@@ -15,7 +15,7 @@ class PaymentFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    protected $model = Payment::class;
+    //protected $model = Payment::class;
 
     public function definition()
     {

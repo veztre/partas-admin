@@ -15,7 +15,7 @@ class BusrouteFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    protected $model = Busroute::class;
+    //protected $model = Busroute::class;
 
 
 
