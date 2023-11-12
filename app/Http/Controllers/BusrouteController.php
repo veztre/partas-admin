@@ -15,9 +15,8 @@ class BusrouteController extends Controller
      */
     public function index()
     {
-
-        $busroutes = Busroute::all();
-        return Inertia::render('Busroutes/List',[
+        $busroutes = Busroute::orderBy('origin')->orderBy('destination')->get();
+        return Inertia::render('Busroutes/List', [
             'busroutes' => $busroutes
         ]);
     }

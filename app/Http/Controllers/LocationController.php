@@ -13,15 +13,17 @@ class LocationController extends Controller
      */
     public function indexAPI()
     {
-    $locations= Location::select('location','longtitude','latitude')->get();
-    return response()->json($locations);
+        $locations = Location::select('location', 'longtitude', 'latitude')->orderBy('location')->get();
+        return response()->json($locations);
     }
+
 
     public function index()
     {
-    $locations= Location::all();
-    return Inertia::render('Locations/List',['locations'=>$locations]);
+        $locations = Location::orderBy('location')->get();
+        return Inertia::render('Locations/List', ['locations' => $locations]);
     }
+
 
 
 

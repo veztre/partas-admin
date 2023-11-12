@@ -20,28 +20,39 @@ class BusScheduleController extends Controller
      */
     public function index()
     {
-       $query="SELECT  bus_schedules.id AS id,type, code, origin,destination,price,
-               DATE_FORMAT(departure_time,'%M %d %Y - %r') AS departure_time,
-               DATE_FORMAT(arrival_time,' %M %d %Y - %r') AS arrival_time
-               FROM  bus_schedules
-               INNER JOIN bus_routes on bus_routes.id = bus_schedules.route_id
-               INNER JOIN buses on buses.id = bus_schedules.bus_id";
+        $query = "SELECT bus_schedules.id AS id, type, code, origin, destination, price,
+                DATE_FORMAT(departure_time,'%M %d %Y - %r') AS departure_time,
+                DATE_FORMAT(arrival_time,' %M %d %Y - %r') AS arrival_time
+                FROM bus_schedules
+                INNER JOIN bus_routes ON bus_routes.id = bus_schedules.route_id
+                INNER JOIN buses ON buses.id = bus_schedules.bus_id
+                ORDER BY 
+                YEAR(departure_time), MONTH(departure_time), DAY(departure_time),
+                HOUR(departure_time), MINUTE(departure_time)";
 
-       $schedules= DB::select($query);
-       return Inertia::render('Schedules/List',['schedules'=>$schedules]);
+        $schedules = DB::select($query);
+        return Inertia::render('Schedules/List', ['schedules' => $schedules]);
     }
 
     public function indexAPI()
     {
-       $query="SELECT  bus_schedules.id AS id,code, origin,destination,
-                       departure_time,arrival_time,price
-               FROM    bus_schedules
-               INNER JOIN bus_routes on bus_routes.id = bus_schedules.route_id
-               INNER JOIN buses on buses.id = bus_schedules.bus_id";
+        $query = "SELECT bus_schedules.id AS id, code, origin, destination,
+                        departure_time, arrival_time, price
+                FROM bus_schedules
+                INNER JOIN bus_routes ON bus_routes.id = bus_schedules.route_id
+                INNER JOIN buses ON buses.id = bus_schedules.bus_id
+                ORDER BY 
+                YEAR(departure_time), MONTH(departure_time), DAY(departure_time),
+                HOUR(departure_time), MINUTE(departure_time)";
 
-       $schedules= DB::select($query);
-       return response()->json($schedules);
+        $schedules = DB::select($query);
+        return response()->json($schedules);
     }
+
+
+
+
+
 
     /**
      * Show the form for creating a new resource.
