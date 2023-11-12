@@ -14,9 +14,8 @@ class BusController extends Controller
      */
     public function index()
     {
-
-        $buses = Bus::all();
-        return Inertia::render('Buses/List',[
+        $buses = Bus::orderBy('capacity')->get();
+        return Inertia::render('Buses/List', [
             'buses' => $buses
         ]);
     }
