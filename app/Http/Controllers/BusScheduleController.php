@@ -28,7 +28,9 @@ class BusScheduleController extends Controller
                 INNER JOIN buses ON buses.id = bus_schedules.bus_id
                 ORDER BY 
                 YEAR(departure_time), MONTH(departure_time), DAY(departure_time),
-                HOUR(departure_time), MINUTE(departure_time)";
+                HOUR(departure_time), MINUTE(departure_time),
+                YEAR(arrival_time), MONTH(arrival_time), DAY(arrival_time),
+                HOUR(arrival_time), MINUTE(arrival_time)";
 
         $schedules = DB::select($query);
         return Inertia::render('Schedules/List', ['schedules' => $schedules]);
