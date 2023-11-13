@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Location;
 use Illuminate\Support\Facades\Request;
 use Inertia\Inertia;
+use Illuminate\Validation\Rule;
 
 class LocationController extends Controller
 {
@@ -38,10 +39,18 @@ class LocationController extends Controller
      */
     public function store()
     {
-        Location::create([
-            "location"=> Request::get("location"),
+        Request::validate([
+            'location' => [
+                'required',
+                Rule::unique('locations', 'location'),
+            ],
         ]);
-        return to_route('locations')->with('success', 'New  created.');
+
+        Location::create([
+            'location' => Request::get('location'),
+        ]);
+
+        return to_route('locations')->with('success', 'New location created.');
     }
 
     /**
@@ -68,14 +77,18 @@ class LocationController extends Controller
     public function update(Location $location)
     {
         Request::validate([
-            "location"=> 'required',
+            'location' => [
+                'required',
+                Rule::unique('locations', 'location')->ignore($location->id),
+            ],
         ]);
 
-        Location::where('id',$location->id)
-        ->update([
-            "location"=> Request::get("location"),
-        ]);
-        return to_route('locations')->with('success', 'location  Updated.');
+        Location::where('id', $location->id)
+            ->update([
+                'location' => Request::get('location'),
+            ]);
+
+        return to_route('locations')->with('success', 'Location updated.');
     }
 
     /**
