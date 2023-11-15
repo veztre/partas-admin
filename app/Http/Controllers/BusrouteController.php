@@ -36,8 +36,8 @@ class BusrouteController extends Controller
     public function store()
     {
         Request::validate([
-            'origin' => 'required',
-            'destination' => 'required',
+            'origin' => 'required|unique',
+            'destination' => 'required|different:origin',
         ]);
 
 
@@ -74,8 +74,8 @@ class BusrouteController extends Controller
     public function update(Busroute $busroute)
     {
         Request::validate([
-            'origin' => 'required',
-            'destination' => 'required',
+            'origin' => 'required|unique',
+            'destination' => 'required|different:origin',
         ]);
 
         Busroute::where('id',$busroute->id)
