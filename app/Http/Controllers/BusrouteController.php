@@ -7,6 +7,7 @@ use App\Http\Requests\UpdateBusrouteRequest;
 use App\Models\Location;
 use Illuminate\Support\Facades\Request;
 use Inertia\Inertia;
+use Illuminate\Validation\Rule;
 
 class BusrouteController extends Controller
 {
@@ -35,10 +36,14 @@ class BusrouteController extends Controller
      */
     public function store()
     {
-        Request::validate([
-            'origin' => 'required|unique',
-            'destination' => 'required|different:origin',
-        ]);
+            Request::validate([
+                'origin' => 'required',
+                'destination' => 'required',
+                // 'origin' => [
+                //     'required',
+                //     Rule::unique('bus_routes', 'origin'),
+                // ],
+            ]);
 
 
         Busroute::create([
@@ -74,8 +79,11 @@ class BusrouteController extends Controller
     public function update(Busroute $busroute)
     {
         Request::validate([
-            'origin' => 'required|unique',
-            'destination' => 'required|different:origin',
+            'origin' => [
+                'required',
+                Rule::unique('bus_routes', 'origin'),
+            ],
+            'destination' => 'required',
         ]);
 
         Busroute::where('id',$busroute->id)
