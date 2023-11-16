@@ -13,8 +13,13 @@ import { reactive,ref } from 'vue'
   })
 
   function submit() {
-     
-      router.post(route("busroutes.store"),form);
+    if(form.origin === form.destination){
+        alert("Time and destination can't be same");
+    }
+    else{
+        router.post(route("busroutes.store"),form);11
+    }
+
   }
   defineProps({
     locations: Object,
