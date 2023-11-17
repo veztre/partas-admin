@@ -1,7 +1,7 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import { Head,router  } from '@inertiajs/vue3';
-import { defineProps } from 'vue';
+import { defineProps, watchEffect } from 'vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue'
 import { reactive,ref } from 'vue'
 import InputLabel from '@/Components/InputLabel.vue'
@@ -12,6 +12,17 @@ import TextInput from '@/Components/TextInput.vue'
       capacity: "",
       type: ""
   })
+
+  const props = defineProps({
+    message : String
+  })
+
+  watchEffect(() => {
+      if (props.message){
+          console.log(props.message)
+          alert(props.message);
+        }
+    })
 
   function submit() {
       router.post(route("bus.store"),form);

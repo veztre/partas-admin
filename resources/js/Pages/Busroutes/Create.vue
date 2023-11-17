@@ -17,7 +17,7 @@ import { reactive,ref } from 'vue'
         alert("Time and destination can't be same");
     }
     else{
-        router.post(route("busroutes.store"),form);11
+        router.post(route("busroutes.store"),form);
     }
 
   }

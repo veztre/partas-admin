@@ -31,7 +31,9 @@ class LocationController extends Controller
 
     public function create()
     {
-        return Inertia::render('Locations/Create');
+        return Inertia::render('Locations/Create', [
+            'message' => session('error')
+            ]);
     }
 
     /**
@@ -40,14 +42,15 @@ class LocationController extends Controller
     public function store()
     {
         Request::validate([
-            'location' => [
-                'required',
-                Rule::unique('locations', 'location'),
-            ],
+            "location" => 'required',
         ]);
 
+        if (Location::where('location', Request::get('location'))->first()) {
+            return to_route('location.create')->with(['error' => 'Location already exists.']);
+        }
+
         Location::create([
-            'location' => Request::get('location'),
+            "location" => Request::get("location"),
         ]);
 
         return to_route('locations')->with('success', 'New location created.');

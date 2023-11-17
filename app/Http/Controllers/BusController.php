@@ -25,7 +25,9 @@ class BusController extends Controller
      */
     public function create()
     {
-        return Inertia::render('Buses/Create');
+        return Inertia::render('Buses/Create', [
+            'message' => session('error')
+        ]);
     }
 
     /**
@@ -39,6 +41,9 @@ class BusController extends Controller
             'capacity' =>'required',
         ]);
 
+        if (Bus::where('code', Request::get('code'))->first()) {
+            return to_route('bus.create')->with(['error' => 'Bus code already exists.']);
+        }
 
         Bus::create([
             'code' =>Request::get('code'),
