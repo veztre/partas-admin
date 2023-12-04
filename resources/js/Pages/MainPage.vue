@@ -83,11 +83,11 @@ defineProps({
         <div>
             <img class="h-auto max-w-full rounded-lg" src="/4.png" alt="">
         </div>
-        <!-- <div>
-            <Carousel />
-        </div> -->
         <div>
-            <img class="/carousel1.png" alt="">
+            <Carousel />
+        </div>
+        <div>
+            <img class="carousel1.png" alt="">
         </div>
 
     </div>
