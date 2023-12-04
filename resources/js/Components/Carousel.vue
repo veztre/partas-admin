@@ -5,18 +5,18 @@
     <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
          <!-- Item 1 -->
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="https://nr4kmtcwpy93.objectstorage.ap-tokyo-1.oci.customer-oci.com/n/nr4kmtcwpy93/b/bucket-20230809-1910/o/carousel1.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            <img src="/public/1.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
         <!-- Item 2 -->
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="https://nr4kmtcwpy93.objectstorage.ap-tokyo-1.oci.customer-oci.com/n/nr4kmtcwpy93/b/bucket-20230809-1910/o/carousel1.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            <img src="/public/1.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
         <!-- Item 3 -->
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="https://nr4kmtcwpy93.objectstorage.ap-tokyo-1.oci.customer-oci.com/n/nr4kmtcwpy93/b/bucket-20230809-1910/o/carousel2.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            <img src="/public/1.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="https://nr4kmtcwpy93.objectstorage.ap-tokyo-1.oci.customer-oci.com/n/nr4kmtcwpy93/b/bucket-20230809-1910/o/carousel3.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+            <img src="/public/1.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
 
     </div>
