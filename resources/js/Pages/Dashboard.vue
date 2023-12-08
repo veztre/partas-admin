@@ -10,7 +10,7 @@ import { Head } from '@inertiajs/vue3';
 
     <AuthenticatedLayout>
         <div class="flex justify-center">
-            <div class="p-6 dark:border-gray-700 mt-14 bg-blue-400">
+            <div class="p-6 dark:border-gray-700 mt-14 bg-blue-400 h-screen">
                 <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
                     <div>
                         <img class="h-auto max-w-full rounded-lg" src="/1.png" alt="">

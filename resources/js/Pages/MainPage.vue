@@ -69,7 +69,7 @@ defineProps({
   </div>
 </nav>
 
-<div class="p-6 dark:border-gray-700 mt-14 bg-blue-400">
+<div class="p-6 dark:border-gray-700 mt-14 bg-blue-400 h-screen">
     <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
         <div>
             <img class="h-auto max-w-full rounded-lg" src="/1.png" alt="">
@@ -83,9 +83,9 @@ defineProps({
         <div>
             <img class="h-auto max-w-full rounded-lg" src="/4.png" alt="">
         </div>
-        <div>
+        <!-- <div>
             <Carousel />
-        </div>
+        </div> -->
         <div>
             <img class="carousel1.png" alt="">
         </div>
