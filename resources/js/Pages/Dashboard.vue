@@ -89,29 +89,33 @@ const options = ref({
     <Head title="Dashboard" />
 
     <AuthenticatedLayout>
-        <div class="flex justify-center">
-            <div class="p-6 dark:border-gray-700 mt-14 bg-blue-400 h-screen">
-                <div class="grid grid-cols-2 md:grid-cols-2 gap-4">
-                    
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 bg-white p-6 rounded-xl">
-                        <Bar :data="chartData" :options="chartOptions" />
-                    </div>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 bg-white p-6 rounded-xl">
-                        <Bar :data="chartData1" :options="chartOptions" />
-                    </div>
-                </div>
-                <div class="flex flex-col items-center">
-                    <div class="bg-white p-6 w-[500px] rounded-xl my-5">
-                        <div class="items-center">
-                            <legend>Bus Routes</legend>
-                            <div class="w-full md:w-auto">
-                                <Pie :data="data" :options="options" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <div class="flex justify-center mt-[-30px]">
+    <div class="bg-[#929abc] rounded-lg p-10 dark:border-gray-700 mt-14">
+      <div class="self-center text-xl text-white font-semibold sm:text-2xl whitespace-nowrap dark:text-white mb-5">
+        <p>Data Charts</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-1 gap-4">
+        <!-- Container for the Pie chart -->
+        <div class="bg-[#f0f0f8] text-black p-6 rounded-xl">
+          <legend>Bus Routes</legend>
+          <div class="w-full md:w-auto">
+            <Pie :data="data" :options="options" />
+          </div>
         </div>
 
-    </AuthenticatedLayout>
+        <!-- Container for Bar graphs (in a row) -->
+        <div class="flex flex-col md:flex-row md:space-x-4">
+          <div class="bg-[#f0f0f8] text-black p-6 rounded-xl flex-1">
+            <Bar :data="chartData" :options="chartOptions" />
+          </div>
+          <div class="bg-[#f0f0f8] text-black p-6 rounded-xl flex-1">
+            <Bar :data="chartData1" :options="chartOptions" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</AuthenticatedLayout>
+ 
 </template>
