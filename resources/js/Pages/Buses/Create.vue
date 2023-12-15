@@ -41,17 +41,17 @@ import TextInput from '@/Components/TextInput.vue'
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 
-                <div class="overflow-hidden ma-8 w-100  bg-red-200 rounded-lg border shadow-xs">
+                <div class="overflow-hidden ma-8 w-100  bg-[#919abc] rounded-lg p-5  shadow-xs">
                     <div class="flex md:items-center m-6">
                             <form class="w-full max-w-sm"  @submit.prevent="submit">
                                 <div class="md:w-1/3">
                                 <InputLabel for="code" class="" value="Code"/>
                                 </div>
-                                <div class="block w-full">
+                                <div class="block w-full text-gray-900">
                                     <TextInput  id="origin"  type="text" v-model="form.code" required />
                                 </div>
                                 <InputLabel for="type" class="block font-medium text-gray-700">Select Bus Type:</InputLabel>
-                                <select id="type" v-model="form.type" class="mt-1 block w-full px-4 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:outline-none focus:border-indigo-500">
+                                <select id="type" v-model="form.type" class="mt-1 block w-full text-gray-900 px-4 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:ring focus:ring-white focus:outline-none focus:border-white">
                                     <option value="deluxe">De Luxe</option>
                                     <option value="firstclass">First Class</option>
                                     <option value="luxury">Luxury</option>

@@ -1,6 +1,7 @@
 <script setup>
 import { Head, Link } from '@inertiajs/vue3';
 import Carousel from '@/Components/Carousel.vue';
+
 defineProps({
     canLogin: {
         type: Boolean,
@@ -15,15 +16,15 @@ defineProps({
 
 
 <template>
-<nav class="bg-gradient-to-b from-black to-black
-            fixed top-0 z-50 w-full bg-white border-b border-black
-            dark:bg-gray-800 dark:border-gray-700 drop-shadow-md">
+<nav class="bg-gradient-to-b from-[#a2a4d6] to-[#bac0e4]
+            fixed top-0 z-50 w-full bg-white border-b border-[#a2a4d6]
+            dark:bg-[#a2a4d6] dark:border-[#a2a4d6]drop-shadow-md">
   <div class="px-3 py-3 lg:px-5 lg:pl-3">
         <div class="flex items-center justify-between">
                 <div class="flex items-center justify-start">
                     <Link href="/" class="flex ml-2 md:mr-24">
-                    <img src="/partas_logo.png" class="h-8 mr-3" alt="FlowBite Logo" />
-                    <span class="self-center text-xl font-sans font-semibold sm:text-2xl whitespace-nowrap text-white">Partas Bus Inc</span>
+                    <img src="/omnibus.png" class="h-8 mr-3" alt="FlowBite Logo" />
+                    <span class="self-center text-xl font-sans font-semibold sm:text-2xl whitespace-nowrap text-white">Omnibus Transport</span>
                     </Link>
                     <span class="self-center text-xl font-sans text-white font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Ticket Reservation System</span>
                 </div>
@@ -32,7 +33,7 @@ defineProps({
                                 <Link
                                     v-if="$page.props.auth.user"
                                     :href="route('dashboard')"
-                                    class="font-semibold text-2xl text-white font-sans hover:text-red-500 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
+                                    class="font-semibold text-2xl text-white font-tahoma "
                                     >Dashboard</Link
                                 >
 
@@ -40,7 +41,7 @@ defineProps({
                                     <div class="flex justify-between">
                                     <Link
                                         :href="route('login')"
-                                        class="flex font-semibold  text-xl text-white hover:text-red-500 dark:text-gray-400
+                                        class="flex font-semibold  text-xl text-white hover:text-[#850903] dark:text-gray-400
                                                dark:hover:text-white focus:outline focus:outline-2
                                                focus:rounded-sm focus:outline-red-500"
                                         >
@@ -53,14 +54,13 @@ defineProps({
                                     <Link
                                         v-if="canRegister"
                                         :href="route('register')"
-                                        class="flex ml-4 font-semibold text-xl text-white hover:text-red-500 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
+                                        class="flex ml-4 font-semibold text-xl text-white hover:text-[#850903] dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
                                         >
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                              <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
                                         </svg>
 
-                                        Register</Link
-                                    >
+                                        Register</Link>
                                     </div>
                                 </template>
                         </div>
@@ -71,15 +71,16 @@ defineProps({
 
 
 
-<div class="flex items-center justify-center bg-white">
 
-<div class=" w-[90rem] bg-white min-h-screen ">
+<div class="flex items-center justify-center bg-[#bcc8ed] ">
+
+<div class=" w-[90rem] bg-[#bcc8ed] min-h-screen ">
             
 <!---->
 <div class="flex justify-center mt-10">
 <div class="carousel rounded-lg w-full  h-full mx-0 my-2.5 drop-shadow-2xl snap-center ">
   <div id="item1" class="carousel-item relative w-full h-full  ">
-    <img src="/partas.jpg" class="w-full" />
+    <img src="/banner.jpg" class="w-full" />
   </div> 
   <div id="item2" class="carousel-item relative w-full h-full  ">
     <img src="/partas1.jpg" class="w-full" />
@@ -88,38 +89,63 @@ defineProps({
     <img src="/partas2.jpg" class="w-full" />
   </div> 
   <div id="item4" class="carousel-item relative w-full h-full ">
-    <img src="/partas.jpg" class="w-full" />
+    <img src="/banner.jpg" class="w-full" />
   </div>
 </div> 
 </div>
-<div class="flex justify-center w-full py-2 gap-2">
-  <a href="#item1" class="btn btn-xs text-white font-sans hover:text-red-500 ">o</a> 
-  <a href="#item2" class="btn btn-xs text-white font-sans hover:text-red-500 ">o</a> 
-  <a href="#item3" class="btn btn-xs text-white font-sans hover:text-red-500 ">o</a> 
-  <a href="#item1" class="btn btn-xs text-white font-sans hover:text-red-500 ">o</a>
+<div class="flex items-center justify-center w-full py-2 gap-2">
+  <a href="#item1" class="btn btn-xs 
+          bg-[#850903] border border-transparent rounded-md font-semibold text-xs
+          text-white uppercase tracking-widest hover:bg-[#850903]
+          focus:bg-[#850903] active:bg-[#850903] focus:outline-none focus:ring-2
+          focus:ring-[#800903] focus:ring-offset-2 transition ease-in-out duration-150">o</a> 
+  <a href="#item2" class="btn btn-xs 
+          bg-[#850903] border border-transparent rounded-md font-semibold text-xs
+          text-white uppercase tracking-widest hover:bg-[#850903]
+          focus:bg-[#850903] active:bg-[#850903] focus:outline-none focus:ring-2
+          focus:ring-[#800903] focus:ring-offset-2 transition ease-in-out duration-150">o</a> 
+  <a href="#item3" class="btn btn-xs 
+          bg-[#850903] border border-transparent rounded-md font-semibold text-xs
+          text-white uppercase tracking-widest hover:bg-[#850903]
+          focus:bg-[#850903] active:bg-[#850903] focus:outline-none focus:ring-2
+          focus:ring-[#800903] focus:ring-offset-2 transition ease-in-out duration-150">o</a> 
+  <a href="#item1" class="btn btn-xs 
+          bg-[#850903] border border-transparent rounded-md font-semibold text-xs
+          text-white uppercase tracking-widest hover:bg-[#850903]
+          focus:bg-[#850903] active:bg-[#850903] focus:outline-none focus:ring-2
+          focus:ring-[#800903] focus:ring-offset-2 transition ease-in-out duration-150">o</a>
 </div>
         <!---->
      
-    <div class="grid grid-cols-2 gap-4 mt-10 text-justify grid grid-flow-col hover:grid-flow-row">
-        <div class=" mt-10 text-xl font-serif text-black bg-white p-3 ">
-            <P>Partas Transportation Co., Inc. is a bus transportation company in the Philippines.
-                 It operates a 24/7 service for passengers and freight (known as "waybills") between Metro Manila and northern Luzon (the Ilocos Region and Cagayan Valley), with services also running to the Cordilleras in Baguio, Bangued in Abra, and also to the south Occidental Mindoro. Partas also offers chartered service for tour groups.</P>
-         
+    <div class="grid grid-cols-2 gap-4 my-10 text-justify grid grid-flow-col hover:grid-flow-row mx-5">
+        <div class="mx-10 text-xl font-serif text-black mt-12 p-3 ">
+            <P>Omnibus Transportation Co., Inc. is a bus transportation company in the Philippines.
+                 It operates a 24/7 service for passengers and freight (known as "waybills") between Metro Manila and northern Luzon
+                  (the Ilocos Region and Cagayan Valley), 
+                 with services also running to the Cordilleras in Baguio,
+                  Bangued in Abra, and also to the south Occidental Mindoro. 
+                 Omnibus also offers chartered service for tour groups. <br>
+                 <br>
+                 “We take pride in our courteous and safe drivers.”</P>
+                 
+                   
         </div>
 
              
-        <div>
-            <img src="/partas2.jpeg" class="w-full" />
+        <div >
+            <img src="/bus1.png" class="w-full drop-shadow-2xl " />
         </div>
       
     </div>
-
-    </div>
+ 
+<!---->
 </div>
-<footer class="footer p-10 bg-black text-neutral-content">
+
+</div>
+<footer class="footer p-10 bg-gradient-to-b from-[#a2a4d6] to-[#bac0e4] text-white">
   <aside>
     <svg width="50" height="50" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" class="fill-current"><path d="M22.672 15.226l-2.432.811.841 2.515c.33 1.019-.209 2.127-1.23 2.456-1.15.325-2.148-.321-2.463-1.226l-.84-2.518-5.013 1.677.84 2.517c.391 1.203-.434 2.542-1.831 2.542-.88 0-1.601-.564-1.86-1.314l-.842-2.516-2.431.809c-1.135.328-2.145-.317-2.463-1.229-.329-1.018.211-2.127 1.231-2.456l2.432-.809-1.621-4.823-2.432.808c-1.355.384-2.558-.59-2.558-1.839 0-.817.509-1.582 1.327-1.846l2.433-.809-.842-2.515c-.33-1.02.211-2.129 1.232-2.458 1.02-.329 2.13.209 2.461 1.229l.842 2.515 5.011-1.677-.839-2.517c-.403-1.238.484-2.553 1.843-2.553.819 0 1.585.509 1.85 1.326l.841 2.517 2.431-.81c1.02-.33 2.131.211 2.461 1.229.332 1.018-.21 2.126-1.23 2.456l-2.433.809 1.622 4.823 2.433-.809c1.242-.401 2.557.484 2.557 1.838 0 .819-.51 1.583-1.328 1.847m-8.992-6.428l-5.01 1.675 1.619 4.828 5.011-1.674-1.62-4.829z"></path></svg>
-    <p>Partas Inc.<br/>Providing reliable service since 1989</p>
+    <p>Omnibus Inc.<br/>Providing reliable service since 1989</p>
   </aside> 
   <nav>
     <header class="footer-title">Social</header> 
