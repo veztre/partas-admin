@@ -23,7 +23,7 @@ function destroy(id){
 
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-[#e6e6f4] overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="bg-[#e6e6f4]  p-5 overflow-hidden shadow-sm sm:rounded-lg">
                   <div class="p-3 ">
                     <Link :href="route('schedule.create')" class="flex items-center bg-[#658503] hover:bg-[#475d02] text-white font-semibold px-3 py-2 rounded mx-2"
                             as="button">

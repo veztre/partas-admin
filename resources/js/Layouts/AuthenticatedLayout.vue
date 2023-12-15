@@ -28,7 +28,7 @@ const toggleSidebar = () => {
             <Sidebar v-if="isSidebarVisible" />
 
             <main class="bg-[#bcc8ed] shadow ">
-                <div class="grid grid-cols-5 grid grid-rows-1 min-h-screen">
+                <div class="grid grid-cols-6 grid grid-rows-1 min-h-screen">
                     <div class="mt-[42px] ml-5 flex flex-col ">
                         <button class="mt-12 max-w-[32px] " @click="toggleSidebar">
                             <svg class="w-5 h-5 text-white transition duration-75 dark:text-gray-400 group-hover:text-white hover:text-[#929abc] "
@@ -80,7 +80,7 @@ const toggleSidebar = () => {
 
 
                     </div>
-                    <div class="p-4 col-span-4 mt-10 ">
+                    <div class="p-4 col-span-4 mt-16 ">
 
                     <slot />
 

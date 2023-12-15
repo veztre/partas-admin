@@ -24,7 +24,7 @@ function destroy(id){
 
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-[#e6e6f4] overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="bg-[#e6e6f4]  p-5 overflow-hidden shadow-sm sm:rounded-lg">
                   <div class="p-3 ">
                     <Link :href="route('location.create')" class="flex items-center bg-[#658503] hover:bg-[#475d02] text-white font-semibold px-3 py-2 rounded mx-2" as="button">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
