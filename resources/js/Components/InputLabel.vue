@@ -8,7 +8,7 @@ defineProps({
 
 <template>
 
-    <label class="flex font-bold uppercase py-2 text-sm text-gray-800">
+    <label class="flex font-bold capitalize py-2 text-sm text-white">
         <span v-if="value">{{ value }}</span>
         <span v-else><slot /></span>
     </label>

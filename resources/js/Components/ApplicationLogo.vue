@@ -1,5 +1,4 @@
 <template>
-          <img src="/partas_logo.png"  >
-
+      <img src="/omnibus.png"  >
 
 </template>
