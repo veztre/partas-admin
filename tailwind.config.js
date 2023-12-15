@@ -20,7 +20,13 @@ export default {
         },
     },
 
+  
+
+
     plugins: [forms,
-              require('flowbite/plugin')],
+        forms,
+        require('flowbite/plugin'), // Your existing plugin
+        require('daisyui'), // Add Daisy UI plugin here
+      ],
         darkMode: "class"
 };

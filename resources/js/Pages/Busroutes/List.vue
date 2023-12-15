@@ -21,12 +21,11 @@ function destroy(id){
 
     <AuthenticatedLayout>
 
-
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="bg-[#e6e6f4]  p-5 overflow-hidden shadow-sm sm:rounded-lg">
                   <div class="p-3 ">
-                    <Link :href="route('busroutes.create')" class="flex items-center bg-blue-500 hover:bg-blue-700 text-white font-semibold px-3 py-2 rounded mx-2"
+                    <Link :href="route('busroutes.create')" class="flex items-center bg-[#658503] hover:bg-[#475d02] text-white font-semibold px-3 py-2 rounded mx-2"
                             as="button">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -41,7 +40,7 @@ function destroy(id){
                         <div class="overflow-x-auto w-full">
                             <table class="w-full whitespace-no-wrap">
                             <thead>
-                            <tr class="text-xs font-semibold TableRowacking-wide text-left text-gray-500 uppercase bg-gray-50 border-b">
+                            <tr class="text-xs font-semibold TableRowacking-wide text-left text-gray-500 uppercase bg-[#cccde9] border-b">
                                 <th class="px-4 py-3">Origin</th>
                                 <th class="px-4 py-3">Destination</th>
                                 <th class="px-4 py-3" colspan="2">Actions</th>
@@ -49,8 +48,8 @@ function destroy(id){
 
                             </tr>
                             </thead>
-                            <tbody class="bg-white py-4" >
-                                <tr v-for="busroute in busroutes" :key="busroute.id" class="border-b transition duration-300 ease-in-out hover:bg-neutral-300 dark:border-neutral-500 dark:hover:bg-neutral-600">
+                            <tbody class="bg-[#e6e6f4] py-4" >
+                                <tr v-for="busroute in busroutes" :key="busroute.id" class="border-b transition duration-300 ease-in-out hover:bg-[#f0f0f8] dark:border-neutral-500 dark:hover:bg-neutral-600">
                                     <td>
                                     {{ busroute.origin }}
                                     </td>
@@ -58,14 +57,14 @@ function destroy(id){
                                     {{ busroute.destination }}
                                     </td>
                                     <td class="flex">
-                                    <Link title="Edit Bus Route" :href="route('busroutes.edit')" class="flex items-center bg-blue-500 hover:bg-blue-700 text-white font-semibold px-3 py-2  m-2 rounded mx-2" :data= "{id: busroute.id}" as="button" >
+                                    <Link title="Edit Bus Route" :href="route('busroutes.edit')" class="flex items-center bg-[#658503] hover:bg-[#475d02] text-white font-semibold px-3 py-2  m-2 rounded mx-2" :data= "{id: busroute.id}" as="button" >
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
                                         </svg>
 
                                    </Link>
                                     <PrimaryButton title="Delete Bus Route"
-                                                class="flex items-center bg-red-500 hover:bg-red-700 text-white font-semibold px-3 py-2 m-2 rounded mx-2"
+                                                class="flex items-center bg-[#850903] hover:bg-[#6a0702] text-white font-semibold px-3 py-2 m-2 rounded mx-2"
                                                 @Click="destroy(busroute.id)"
                                             >
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
