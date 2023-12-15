@@ -69,9 +69,6 @@ defineProps({
   </div>
 </nav>
 
-
-
-
 <div class="flex items-center justify-center bg-[#bcc8ed] ">
 
 <div class=" w-[90rem] bg-[#bcc8ed] min-h-screen ">
@@ -128,9 +125,6 @@ defineProps({
                  <br>
                  “We take pride in our courteous and safe drivers.”</P>
                  
-                   
-        </div>
-
              
         <div >
             <img src="/bus1.png" class="w-full drop-shadow-2xl " />

@@ -1,5 +1,4 @@
 <template>
-          <img src="/omnibus.png"  >
-
+      <img src="/omnibus.png"  >
 
 </template>
