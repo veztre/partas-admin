@@ -5,6 +5,17 @@ import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 import { Head, Link, useForm } from '@inertiajs/vue3';
+import vueRecaptcha from 'vue3-recaptcha2';
+import { ref } from 'vue';
+
+
+const captchaVerified = ref(false);
+
+const onCaptchaVerified = (response) => {
+    if (response) {
+        captchaVerified.value = true;
+    }
+};
 
 const form = useForm({
     name: '',
@@ -14,9 +25,14 @@ const form = useForm({
 });
 
 const submit = () => {
-    form.post(route('register'), {
-        onFinish: () => form.reset('password', 'password_confirmation'),
-    });
+    if (captchaVerified.value) {
+        form.post(route('register'), {
+            onFinish: () => form.reset('password', 'password_confirmation'),
+        });
+    } else {
+        console.error('reCAPTCHA verification failed');
+        alert("reCAPTCHA verification failed");
+    }
 };
 </script>
 
@@ -84,6 +100,14 @@ const submit = () => {
                 />
 
                 <InputError class="mt-2" :message="form.errors.password_confirmation" />
+            </div>
+
+            <div class="pt-4 flex items-center justify-center">
+                <vue-recaptcha
+                    ref="recaptcha"
+                    @verify="onCaptchaVerified"
+                    sitekey="6LcYNTIpAAAAAO2tC14UTQ_wTyOMREUdZXPUjjKR"
+                ></vue-recaptcha>
             </div>
 
             <div class="flex items-center justify-end mt-4">
