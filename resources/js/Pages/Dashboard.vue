@@ -21,9 +21,11 @@ const props = defineProps({
     busTypes: Object,
     busCapacity: Object,
     busRoutes: Object,
+    price: Number,
+    busCount: Number,
 });
 
-console.log('Fetched Bus Types:', props.busRoutes);
+console.log('Fetched Bus Types:', props.busCount);
 
 const chartData = ref({
     labels: Object.keys(props.busRoutes),
@@ -117,22 +119,22 @@ const options = ref({
                     </div>
                     <div class="stats shadow bg-[#f0f0f8]">
 
-                        <div class="stat place-items-center">
+                        <!-- <div class="stat place-items-center">
                             <div class="stat-title">Downloads</div>
                             <div class="stat-value">31K</div>
                             <div class="stat-desc">From January 1st to February 1st</div>
+                        </div> -->
+
+                        <div class="stat place-items-center">
+                            <div class="stat-title">Number of busses</div>
+                            <div class="stat-value text-secondary">{{props.busCount}}</div>
+                            <!-- <div class="stat-desc text-secondary">↗︎ 40 (2%)</div> -->
                         </div>
 
                         <div class="stat place-items-center">
-                            <div class="stat-title">Users</div>
-                            <div class="stat-value text-secondary">4,200</div>
-                            <div class="stat-desc text-secondary">↗︎ 40 (2%)</div>
-                        </div>
-
-                        <div class="stat place-items-center">
-                            <div class="stat-title">New Registers</div>
-                            <div class="stat-value">1,200</div>
-                            <div class="stat-desc">↘︎ 90 (14%)</div>
+                            <div class="stat-title">Total Profits</div>
+                            <div class="stat-value">{{props.price}}</div>
+                            <!-- <div class="stat-desc">↘︎ 90 (14%)</div> -->
                         </div>
 
                     </div>
